@@ -1,0 +1,21 @@
+public class Xor {
+
+    public static void main (String ...args){
+
+        String stringOne = "This is a forward String";
+
+
+        char arrayOne[] = stringOne.toCharArray();
+        int j = arrayOne.length-1;
+
+        for(int i =0 ; i<j ; i++ , j--){
+
+            arrayOne[i] =(char) (arrayOne[i]^arrayOne[j]);
+            arrayOne[j] = (char)(arrayOne[i]^arrayOne[j]);
+            arrayOne[i] = (char)(arrayOne[i]^arrayOne[j]);
+        }
+
+        System.out.println(String.valueOf(arrayOne));
+
+    }
+}
