@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+/**
+ * Created by abhishek on 11/25/15.
+ */
+public class Permutation {
+
+    public static void main (String ...args){
+
+        System.out.println("Enter a one word String ");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        char inputArray[] = input.toCharArray();
+        int start = 0 ;
+        int end = inputArray.length-1;
+
+        permute(inputArray , start , end);
+
+
+
+    }
+
+    private static void permute(char[] inputArray , int start , int end ) {
+
+        if(start == end ){
+            System.out.println(String.valueOf(inputArray));
+        }
+
+        else{
+
+            for(int i = start ; i<=end; i++){
+
+                char temp = inputArray[i];
+                inputArray[i] = inputArray[start];
+                inputArray[start] = temp;
+
+                permute(inputArray , start+1 , end);
+
+                char tempOne = inputArray[i];
+                inputArray[i] = inputArray[start];
+                inputArray[start] = tempOne;
+
+            }
+
+        }
+
+    }
+}
