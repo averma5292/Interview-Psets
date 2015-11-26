@@ -1,0 +1,26 @@
+public class Recursive {
+
+    public static void main (String ...args){
+
+        String string = "This is a forward String";
+
+        int start = 0;
+        int end = string.length()-1;
+        reverse(string ,   end  );
+
+
+    }
+
+    private static String reverse(String string ,  int end ){
+
+        if( end<0 ){
+           return null;
+        }
+        else{
+
+            System.out.print(string.charAt(end));
+            return reverse(string , end-1);
+        }
+
+    }
+}
