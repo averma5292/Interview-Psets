@@ -1,0 +1,57 @@
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by abhishek on 11/27/15.
+ */
+ 
+public class LongestPalindrome {
+
+    public static void main(String...args){
+
+        String input = "This is bob with hannah";
+        StringBuffer stringBuffer = new StringBuffer(input);
+
+        String array[] = input.split(" ");
+        StringBuffer words[] = new StringBuffer[array.length] ;
+
+        HashMap<String , Integer> palindromeWords = new HashMap<String , Integer>();
+
+
+        for(int i =0 ; i <array.length;i++){
+
+            words[i] = new StringBuffer(array[i]);
+
+        }
+
+
+        for(int i =0 ; i<words.length;i++){
+
+            if(words[i].reverse().toString().equals(array[i])){
+                palindromeWords.put(array[i], array[i].length());
+            }
+
+        }
+
+        System.out.println(palindromeWords);
+
+        System.out.println();
+
+        int max = 0 ;
+        String longestPalindrome = null ;
+
+        for (Map.Entry<String , Integer> m:
+             palindromeWords.entrySet()) {
+
+            if(m.getValue()>max){
+
+                max = m.getValue();
+                longestPalindrome = m.getKey();
+
+            }
+
+        }
+        System.out.println("Longest Palindrome :"+longestPalindrome);
+
+    }
+}
