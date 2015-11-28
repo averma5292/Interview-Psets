@@ -1,0 +1,82 @@
+/**
+ * Created by abhishek on 11/28/15.
+ */
+public class SpiralMatrix {
+
+    public static void main (String ...args){
+
+        int array[][] = {{1,2,3} , {4,5,6} , {7,8,9} };
+
+        for(int i =0 ; i<3;i++){
+
+            System.out.println("");
+            for(int j =0;j<3; j++){
+
+                System.out.print(array[i][j]+" ");
+            }
+        }
+
+        System.out.println();
+        spiral(array);
+    }
+
+    public static void spiral(int array[][] ){
+
+        int top = 0 ;
+        int bottom = array.length-1;
+        int left = 0 ;
+        int right = array[0].length-1;
+
+
+       while(true){
+
+           // printing the first row
+           for(int i=left ; i<=right;++i){
+
+               System.out.print(array[top][i]+" ");
+           }
+
+           top++;
+
+           if(left>right  ||top>bottom)
+               break;
+
+           //printing the last column
+           for(int i = top ; i<=bottom;++i){
+
+               System.out.print(array[i][right]);
+           }
+           right--;
+
+           if(left>right || top>bottom)
+               break;
+
+           //printing the last row(right to left)
+           for(int i = right ; i>=left;--i){
+               System.out.print(array[bottom][i]);
+           }
+           bottom--;
+           if(left>right || top>bottom)
+               break;
+
+           //printing the first row (bottom to top)
+           for(int i = bottom; i>=top;--i){
+
+               System.out.print(array[i][left]);
+           }
+           left++;
+
+           if(left>right || top>bottom)
+               break;
+       }
+
+
+
+
+
+    }
+
+
+
+
+}
