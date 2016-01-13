@@ -1,0 +1,90 @@
+package MyFirst;
+
+import java.util.HashMap;
+
+/**
+ * Created by abhishek on 1/12/16.
+ */
+
+public class Parsing {
+
+    public static void main (String ...args) {
+
+        
+        String inputString  = "12345";
+        
+        int length = inputString.length();
+
+        HashMap<Character, Integer> values = new HashMap<Character, Integer>();
+        int index = 0;
+
+        for (int i = length - 1; i >= 0; i--) {
+
+
+            int d = (int) Math.pow(10, i);
+            values.put(inputString.charAt(index), d);
+           index= index+1;
+
+        }
+
+        System.out.println(values);
+
+        int number = 0;
+
+        for (int i = 0; i < inputString.length(); i++) {
+
+
+            if (inputString.charAt(i) == '1') {
+
+                number = number + (1 * values.get('1'));
+            }
+
+            if (inputString.charAt(i) == '2') {
+
+                number = number + (2 * values.get('2'));
+            }
+
+            if (inputString.charAt(i) == '3') {
+
+                number = number + (3 * values.get('3'));
+            }
+
+            if (inputString.charAt(i) == '4') {
+
+                number = number + (4 * values.get('4'));
+            }
+
+            if (inputString.charAt(i) == '5') {
+
+                number = number + (5 * values.get('5'));
+            }
+
+            if (inputString.charAt(i) == '6') {
+
+                number = number + (6 * values.get('6'));
+            }
+
+            if (inputString.charAt(i) == '7') {
+
+                number = number + (7 * values.get('7'));
+            }
+
+            if (inputString.charAt(i) == '8') {
+
+                number = number + (8 * values.get('8'));
+            }
+
+            if (inputString.charAt(i) == '9') {
+
+                number = number + (9 * values.get('9'));
+            }
+        }
+
+        System.out.println(number);
+
+    }
+
+
+
+
+}
